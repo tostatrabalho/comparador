@@ -1,3 +1,8 @@
+const supabaseUrl = "https://hkqtbzydqcydyvtdgcph.supabase.co";
+const supabaseKey = "sb_publishable_mKQCqS9aczIfZ7IU-zhDjQ_hUVJw80B";
+
+const client = window.supabase.createClient(supabaseUrl, supabaseKey);
+
 let produtos = [];
 
 // carregar produtos
