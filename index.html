@@ -3,17 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <title>Comparador de Produtos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      width: 600px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    select {
+      width: 45%;
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #22c55e;
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #16a34a;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #334155;
+    }
+
+    th {
+      background: #334155;
+    }
+
+    tr:nth-child(even) {
+      background: #1e293b;
+    }
+
+    .highlight {
+      background: #16a34a;
+      color: #000;
+      font-weight: bold;
+    }
+
+  </style>
 </head>
+
 <body>
 
-<h1>Comparador de Produtos</h1>
+<div class="container">
+  <h1>🔍 Comparador de Produtos</h1>
 
-<select id="produto1"></select>
-<select id="produto2"></select>
+  <div>
+    <select id="produto1"></select>
+    <select id="produto2"></select>
+  </div>
 
-<button onclick="comparar()">Comparar</button>
+  <button onclick="comparar()">Comparar</button>
 
-<div id="resultado"></div>
+  <div id="resultado"></div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 <script src="script.js"></script>
