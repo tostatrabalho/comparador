@@ -87,7 +87,7 @@ function calcularPontuacao(p) {
 }
 
 // =======================
-// COMPARAR
+// COMPARAR LIMPO
 // =======================
 function comparar() {
   const id1 = document.getElementById("produto1").value;
@@ -101,19 +101,7 @@ function comparar() {
     return;
   }
 
-  const score1 = calcularPontuacao(p1);
-  const score2 = calcularPontuacao(p2);
-
-  let vencedor = "Empate";
-
-  if (score1 > score2) vencedor = p1.nome;
-  if (score2 > score1) vencedor = p2.nome;
-
   document.getElementById("resultado").innerHTML = `
-    <div class="card-vencedor">
-      🏆 Melhor escolha: ${vencedor}
-    </div>
-
     <table>
       <tr>
         <th>Campo</th>
@@ -168,20 +156,9 @@ function comparar() {
         <td>R$ ${p1.preco}</td>
         <td>R$ ${p2.preco}</td>
       </tr>
-
-      <tr>
-        <td>⭐ Nota Final</td>
-        <td class="${score1 > score2 ? 'highlight' : ''}">
-          ${score1}
-        </td>
-        <td class="${score2 > score1 ? 'highlight' : ''}">
-          ${score2}
-        </td>
-      </tr>
     </table>
   `;
 }
-
 // =======================
 // INICIAR
 // =======================
