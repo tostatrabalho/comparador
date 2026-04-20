@@ -2,48 +2,137 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Comparador</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comparador Gamer</title>
 
 <style>
-body {
-  font-family: Arial;
-  background: #0f172a;
-  color: white;
-  text-align: center;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-.container {
-  background: #1e293b;
-  padding: 20px;
-  margin: 50px auto;
-  width: 600px;
-  border-radius: 10px;
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:linear-gradient(135deg,#020617,#0f172a,#1e293b);
+  color:white;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
 }
 
-select, button {
-  padding: 10px;
-  margin: 10px;
+.container{
+  width:100%;
+  max-width:900px;
+  background:#111827;
+  border-radius:18px;
+  padding:30px;
+  box-shadow:0 0 25px rgba(0,0,0,.5);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:25px;
+  font-size:32px;
+}
+
+.topo{
+  display:grid;
+  grid-template-columns:1fr 1fr auto;
+  gap:15px;
+}
+
+select,button{
+  padding:14px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+}
+
+select{
+  background:#1e293b;
+  color:white;
+}
+
+button{
+  background:#22c55e;
+  color:white;
+  cursor:pointer;
+  font-weight:bold;
+  transition:.2s;
+}
+
+button:hover{
+  transform:scale(1.05);
+  background:#16a34a;
+}
+
+#resultado{
+  margin-top:30px;
+}
+
+.card-vencedor{
+  background:#14532d;
+  padding:18px;
+  border-radius:12px;
+  text-align:center;
+  font-size:24px;
+  margin-bottom:20px;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+th{
+  background:#1d4ed8;
+  padding:14px;
+}
+
+td{
+  padding:12px;
+  text-align:center;
+  background:#1e293b;
+  border-bottom:1px solid #334155;
+}
+
+.highlight{
+  background:#15803d !important;
+  font-weight:bold;
+}
+
+@media(max-width:700px){
+  .topo{
+    grid-template-columns:1fr;
+  }
+
+  table{
+    font-size:13px;
+  }
 }
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
-  <h1>Comparador</h1>
+  <h1>🎮 Comparador Gamer</h1>
 
-  <select id="produto1"></select>
-  <select id="produto2"></select>
-
-  <br>
-
-  <button onclick="comparar()">Comparar</button>
+  <div class="topo">
+    <select id="produto1"></select>
+    <select id="produto2"></select>
+    <button onclick="comparar()">Comparar</button>
+  </div>
 
   <div id="resultado"></div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="script.js"></script>
 
 </body>
